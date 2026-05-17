@@ -99,8 +99,14 @@ Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
 
 ```text
 .
+|-- CLAUDE-CODE-OPERATING-GUIDE.md
+|-- CLAUDE-CODE-OPERATING-GUIDE.tr.md
+|-- CHANGELOG.md
+|-- CONTRIBUTING.md
+|-- LICENSE
 |-- README.md
 |-- README.tr.md
+|-- SECURITY.md
 |-- docs/
 |   |-- OPERATING-MODEL.md
 |   `-- OPERATING-MODEL.tr.md
@@ -111,6 +117,7 @@ Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
         |-- CLAUDE.md
         |-- PROJECT_CONTEXT.md
         |-- SESSION_CONTEXT.md
+        |-- CHANGELOG.md
         |-- docs/
         `-- .claude/
 ```
