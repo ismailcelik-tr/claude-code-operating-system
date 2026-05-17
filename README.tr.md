@@ -23,12 +23,7 @@
 
 ## Bu repository neden var?
 
-Modern AI-assisted development is shifting from:
-- prompt-based coding
-to:
-- persistent AI operating systems
-
-This repository explores how to structure long-running software projects for AI coding agents such as Claude Code.
+Modern yapay zekâ destekli geliştirme süreçleri, prompt tabanlı kodlamadan kalıcı yapay zekâ işletim sistemlerine evriliyor. Bu repository, Claude Code gibi yapay zekâ kodlama ajanları için uzun soluklu yazılım projelerinin nasıl yapılandırılabileceğini araştırıyor.
 
 Yani amaç, her oturumda aynı proje bağlamını tekrar tekrar anlatmak yerine, repoya kalıcı bir yapay zeka işletim katmanı kazandırmak. Bu katman; talimatlardan, proje bağlamından, oturum notlarından, custom command’lardan, hook’lardan, kurallardan, skill’lerden, subagent’lardan ve dış sistem entegrasyonlarından oluşur.
 
