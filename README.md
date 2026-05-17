@@ -15,7 +15,7 @@
 <p align="center">
   A practical repository structure for long-running Claude Code projects.
   <br>
-  <a href="./README.tr.md">Turkish README</a> | <a href="./templates/claude-code-os">Templates</a> | <a href="./docs/OPERATING-MODEL.md">Operating model</a>
+  <a href="./README.tr.md">Turkish README</a> | <a href="./CLAUDE-CODE-OPERATING-GUIDE.md">Full guide</a> | <a href="./templates/claude-code-os">Templates</a> | <a href="./docs/OPERATING-MODEL.md">Operating model</a>
 </p>
 
 > [!NOTE]
@@ -153,6 +153,8 @@ Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
 ## Related documents
 
 - [Operating model](./docs/OPERATING-MODEL.md)
+- [Full Claude Code operating guide](./CLAUDE-CODE-OPERATING-GUIDE.md)
+- [Turkish full guide](./CLAUDE-CODE-OPERATING-GUIDE.tr.md)
 - [Turkish operating model](./docs/OPERATING-MODEL.tr.md)
 - [Starter layout example](./examples/starter-layout/README.md)
 - [Template package](./templates/claude-code-os)

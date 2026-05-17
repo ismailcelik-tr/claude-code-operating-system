@@ -15,7 +15,7 @@
 <p align="center">
   Uzun soluklu Claude Code projeleri için pratik bir repo işletim modeli.
   <br>
-  <a href="./README.md">English README</a> | <a href="./templates/claude-code-os">Şablonlar</a> | <a href="./docs/OPERATING-MODEL.tr.md">İşletim modeli</a>
+  <a href="./README.md">English README</a> | <a href="./CLAUDE-CODE-OPERATING-GUIDE.tr.md">Tam rehber</a> | <a href="./templates/claude-code-os">Şablonlar</a> | <a href="./docs/OPERATING-MODEL.tr.md">İşletim modeli</a>
 </p>
 
 > [!NOTE]
@@ -153,6 +153,8 @@ Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
 ## İlgili dokümanlar
 
 - [Operating model](./docs/OPERATING-MODEL.md)
+- [Tam Claude Code çalışma mimarisi rehberi](./CLAUDE-CODE-OPERATING-GUIDE.tr.md)
+- [İngilizce tam rehber](./CLAUDE-CODE-OPERATING-GUIDE.md)
 - [Türkçe işletim modeli](./docs/OPERATING-MODEL.tr.md)
 - [Starter layout örneği](./examples/starter-layout/README.md)
 - [Şablon paketi](./templates/claude-code-os)
