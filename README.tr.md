@@ -6,20 +6,20 @@
 
 <p align="center">
   <a href="./LICENSE"><img alt="Lisans: MIT" src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat-square"></a>
-  <a href="./README.md"><img alt="Dil: Ingilizce ve Turkce" src="https://img.shields.io/badge/Language-EN%20%2F%20TR-1f6feb?style=flat-square"></a>
+  <a href="./README.md"><img alt="Dil: İngilizce ve Türkçe" src="https://img.shields.io/badge/Language-EN%20%2F%20TR-1f6feb?style=flat-square"></a>
   <img alt="Claude Code" src="https://img.shields.io/badge/Built%20for-Claude%20Code-000000?style=flat-square">
-  <img alt="Sablonlar dahil" src="https://img.shields.io/badge/Templates-Included-6f42c1?style=flat-square">
-  <img alt="AI ajan hazir" src="https://img.shields.io/badge/AI%20Agents-Ready-ff7b72?style=flat-square">
+  <img alt="Şablonlar dahil" src="https://img.shields.io/badge/Templates-Included-6f42c1?style=flat-square">
+  <img alt="AI ajan hazır" src="https://img.shields.io/badge/AI%20Agents-Ready-ff7b72?style=flat-square">
 </p>
 
 <p align="center">
-  Uzun soluklu Claude Code projeleri icin pratik bir repo isletim modeli.
+  Uzun soluklu Claude Code projeleri için pratik bir repo işletim modeli.
   <br>
-  <a href="./README.md">English README</a> | <a href="./templates/claude-code-os">Sablonlar</a> | <a href="./docs/OPERATING-MODEL.tr.md">Isletim modeli</a>
+  <a href="./README.md">English README</a> | <a href="./templates/claude-code-os">Şablonlar</a> | <a href="./docs/OPERATING-MODEL.tr.md">İşletim modeli</a>
 </p>
 
 > [!NOTE]
-> Claude Code tarafindaki hooks, skills, plugins, MCP servers ve subagents gibi ozellikler zamanla degisebilir. Bu repoyu, periyodik olarak gozden gecirilmesi gereken bir isletim modeli olarak dusunun.
+> Claude Code tarafındaki hooks, skills, plugins, MCP server’ları ve subagent’lar gibi özellikler zaman içinde değişebilir. Bu nedenle, bu repoyu periyodik olarak gözden geçirilmesi gereken yaşayan bir işletim modeli olarak düşünün.
 
 ## Bu repository neden var?
 
@@ -30,32 +30,32 @@ to:
 
 This repository explores how to structure long-running software projects for AI coding agents such as Claude Code.
 
-Yani amac, her oturumda ayni proje baglamini tekrar tekrar anlatmak yerine, repoya kalici bir yapay zeka isletim katmani kazandirmak. Bu katman; talimatlardan, proje baglamindan, oturum notlarindan, custom command'lardan, hook'lardan, kurallardan, skill'lerden, subagent'lardan ve dis sistem entegrasyonlarindan olusur.
+Yani amaç, her oturumda aynı proje bağlamını tekrar tekrar anlatmak yerine, repoya kalıcı bir yapay zeka işletim katmanı kazandırmak. Bu katman; talimatlardan, proje bağlamından, oturum notlarından, custom command’lardan, hook’lardan, kurallardan, skill’lerden, subagent’lardan ve dış sistem entegrasyonlarından oluşur.
 
 ## Ana fikir
 
-Claude Code en verimli haline, repo kendi calisma duzenini acikladiginda yaklasir.
+Claude Code en verimli haline, repo kendi çalışma düzenini açıkladığında yaklaşır.
 
-Temel ayrim su sekilde kurulabilir:
+Temel ayrım şu şekilde kurulabilir:
 
-| Dosya veya klasor | Amac |
+| Dosya veya klasör | Amaç |
 | --- | --- |
-| `CLAUDE.md` | Claude Code'un bu projedeki kalici davranis kurallari |
-| `PROJECT_CONTEXT.md` | Kalici urun, mimari ve domain baglami |
-| `SESSION_CONTEXT.md` | Son oturumdan kalan gecici devam notlari |
-| `docs/OPEN_DECISIONS.md` | Netlesmemis kararlar |
-| `docs/IMPLEMENTATION_STATE.md` | Biten, devam eden ve siradaki isler |
-| `.claude/commands/` | Tekrar kullanilabilir slash-command workflow'lari |
-| `.claude/hooks/` | Otomatik yasam dongusu, guvenlik ve kalite kontrolleri |
-| `.claude/rules/` | Teknolojiye veya klasore ozel kurallar |
-| `.claude/agents/` | Uzman subagent rol tanimlari |
-| `.claude/skills/` | Tekrar kullanilabilir uzmanlik paketleri |
-| MCP servers | Dis sistemlere kontrollu erisim |
-| Plugins | Commands, hooks, skills, agents ve MCP ayarlarini tasinabilir paket haline getirme |
+| `CLAUDE.md` | Claude Code’un bu projedeki kalıcı davranış kuralları |
+| `PROJECT_CONTEXT.md` | Kalıcı ürün, mimari ve domain bağlamı |
+| `SESSION_CONTEXT.md` | Son oturumdan kalan geçici devam notları |
+| `docs/OPEN_DECISIONS.md` | Netleşmemiş kararlar |
+| `docs/IMPLEMENTATION_STATE.md` | Biten, devam eden ve sıradaki işler |
+| `.claude/commands/` | Tekrar kullanılabilir slash-command workflow’ları |
+| `.claude/hooks/` | Otomatik yaşam döngüsü, güvenlik ve kalite kontrolleri |
+| `.claude/rules/` | Teknolojiye veya klasöre özel kurallar |
+| `.claude/agents/` | Uzman subagent rol tanımları |
+| `.claude/skills/` | Tekrar kullanılabilir uzmanlık paketleri |
+| MCP servers | Dış sistemlere kontrollü erişim |
+| Plugins | Commands, hooks, skills, agents ve MCP ayarlarını taşınabilir paket haline getirme |
 
-## Onerilen ilerleme sirasi
+## Önerilen ilerleme sırası
 
-Kucuk baslayin. Yapiyi, gercek bir devam ettirme veya kalite problemi cozdurdugu olcude genisletin.
+Küçük başlayın. Yapıyı, gerçek bir devam ettirme veya kalite problemi çözdürdüğü ölçüde genişletin.
 
 ```text
 1. Manuel prompt veya /init
@@ -70,15 +70,15 @@ Kucuk baslayin. Yapiyi, gercek bir devam ettirme veya kalite problemi cozdurdugu
 10. Plugins
 ```
 
-## Hizli baslangic
+## Hızlı başlangıç
 
-Baslangic sablonunu yeni veya mevcut bir projeye kopyalayin:
+Başlangıç şablonunu yeni veya mevcut bir projeye kopyalayın:
 
 ```bash
 cp -R templates/claude-code-os/. /path/to/your-project/
 ```
 
-Sonra Claude Code'a sunu soyleyin:
+Sonra Claude Code’a şunu söyleyin:
 
 ```text
 Create or update the Claude Code operating structure for this repository.
@@ -95,7 +95,7 @@ Update the Claude Code operating files so this project can continue across multi
 Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
 ```
 
-## Repo icerigi
+## Repo içeriği
 
 ```text
 .
@@ -117,49 +117,49 @@ Keep CLAUDE.md concise and put temporary state in SESSION_CONTEXT.md.
 
 ## Ne nereye konur?
 
-| Ihtiyac | Konum |
+| İhtiyaç | Konum |
 | --- | --- |
-| Claude'un her zaman uymasi gereken kural | `CLAUDE.md` |
-| Kalici mimari veya urun bilgisi | `PROJECT_CONTEXT.md` |
-| Son yarim kalan oturumdan devam notu | `SESSION_CONTEXT.md` |
+| Claude’un her zaman uyması gereken kural | `CLAUDE.md` |
+| Kalıcı mimari veya ürün bilgisi | `PROJECT_CONTEXT.md` |
+| Son yarım kalan oturumdan devam notu | `SESSION_CONTEXT.md` |
 | Tekrarlanan manuel workflow | `.claude/commands/` |
-| Otomatik guvenlik veya kalite kontrolu | `.claude/hooks/` |
-| Belirli teknoloji veya klasor icin kural | `.claude/rules/` |
-| Tekrar kullanilabilir yontem veya uzmanlik | `.claude/skills/` |
-| Uzman role devredilecek is | `.claude/agents/` |
-| Dis proje verisi | MCP server |
-| Birden cok projeye tasinacak paket | Plugin |
+| Otomatik güvenlik veya kalite kontrolü | `.claude/hooks/` |
+| Belirli teknoloji veya klasör için kural | `.claude/rules/` |
+| Tekrar kullanılabilir yöntem veya uzmanlık | `.claude/skills/` |
+| Uzman role devredilecek iş | `.claude/agents/` |
+| Dış proje verisi | MCP server |
+| Birden çok projeye taşınacak paket | Plugin |
 
-## Sablonun icerdikleri
+## Şablonun içerdikleri
 
-- Sismeyen, okunabilir bir `CLAUDE.md`.
-- Kalici proje baglami ile gecici oturum notlarini ayiran dosyalar.
-- Session start ve stop hook ornekleri.
-- Riskli komutlar ve secret dosyalari icin Bash guard ornekleri.
-- `continue-session`, `implement-step`, `review-changes`, `close-session` gibi tekrar kullanilabilir command prompt'lari.
-- Code review, security review ve documentation maintenance icin subagent rol ornekleri.
-- Test, guvenlik ve dokumantasyon guncelleme kurallari.
+- Şişmeyen, okunabilir bir `CLAUDE.md`.
+- Kalıcı proje bağlamı ile geçici oturum notlarını ayıran dosyalar.
+- Session start ve stop hook örnekleri.
+- Riskli komutlar ve secret dosyaları için Bash guard örnekleri.
+- `continue-session`, `implement-step`, `review-changes`, `close-session` gibi tekrar kullanılabilir command prompt’ları.
+- Code review, security review ve documentation maintenance için subagent rol örnekleri.
+- Test, güvenlik ve dokümantasyon güncelleme kuralları.
 
-## Tasarim prensipleri
+## Tasarım prensipleri
 
-- Talimatlari her oturumda okunabilecek kadar kisa tut.
-- Kalici proje bilgisini gecici oturum bilgisinden ayir.
-- Buyuk yeniden yazimlar yerine kucuk ve incelenebilir degisiklikleri tercih et.
-- Netlesmemis kararlari gorunur yap; ajanin sessizce tahmin etmesine izin verme.
-- Hooks otomatik kontroller icin, commands tekrar eden workflow'lar icin, skills uzmanlik icin, agents ise uzman rol denetimi icin kullanilir.
-- MCP server'lari yalnizca repo dosyalari yeterli olmadiginda ekle.
-- Plugin'e ancak ayni yapi birden fazla projede kendini kanitladiginda gec.
+- Talimatları her oturumda okunabilecek kadar kısa tut.
+- Kalıcı proje bilgisini geçici oturum bilgisinden ayır.
+- Büyük yeniden yazımlar yerine küçük ve incelenebilir değişiklikleri tercih et.
+- Netleşmemiş kararları görünür yap; ajanın sessizce tahmin etmesine izin verme.
+- Hooks otomatik kontroller için, commands tekrar eden workflow’lar için, skills uzmanlık için, agents ise uzman rol denetimi için kullanılır.
+- MCP server’ları yalnızca repo dosyaları yeterli olmadığında ekle.
+- Plugin’e ancak aynı yapı birden fazla projede kendini kanıtladığında geç.
 
-## Ilgili dokumanlar
+## İlgili dokümanlar
 
 - [Operating model](./docs/OPERATING-MODEL.md)
-- [Turkce isletim modeli](./docs/OPERATING-MODEL.tr.md)
-- [Starter layout ornegi](./examples/starter-layout/README.md)
-- [Sablon paketi](./templates/claude-code-os)
+- [Türkçe işletim modeli](./docs/OPERATING-MODEL.tr.md)
+- [Starter layout örneği](./examples/starter-layout/README.md)
+- [Şablon paketi](./templates/claude-code-os)
 
 ## Yasal not
 
-Bu proje bagimsiz bir topluluk rehberidir. Anthropic veya Claude ile resmi bir baglantisi yoktur. Claude ve Claude Code ilgili sahiplerinin markalaridir.
+Bu proje bağımsız bir topluluk rehberidir. Anthropic veya Claude ile resmi bir bağlantısı yoktur. Claude ve Claude Code ilgili sahiplerinin markalarıdır.
 
 ## Lisans
 

@@ -1,142 +1,142 @@
-# Claude Code Isletim Modeli
+# Claude Code İşletim Modeli
 
-Bu dokuman, README'deki kisa anlatimi uzun soluklu Claude Code projeleri icin uygulanabilir bir isletim modeline donusturur.
+Bu doküman, README’deki kısa anlatımı uzun soluklu Claude Code projeleri için uygulanabilir bir işletim modeline dönüştürür.
 
 ## 1. Problem
 
-AI coding oturumlari genellikle basit nedenlerle zorlasir:
+AI coding oturumları genellikle basit nedenlerle zorlaşır:
 
 - Ajan mevcut proje durumunu bilmez.
-- Gecici kararlar kalici mimariyle karisir.
-- Ayni kurulum, test ve guvenlik kurallari elle tekrar edilir.
-- Uzun soluklu islerde oturumlar arasi devam baglami kaybolur.
-- Issue, dokuman, monitoring gibi dis baglamlar ya gec baglanir ya da fazla genis yetkiyle baglanir.
+- Geçici kararlar kalıcı mimariyle karışır.
+- Aynı kurulum, test ve güvenlik kuralları elle tekrar edilir.
+- Uzun soluklu işlerde oturumlar arası devam bağlamı kaybolur.
+- Issue, doküman, monitoring gibi dış bağlamlar ya geç bağlanır ya da fazla geniş yetkiyle bağlanır.
 
-Bu repodaki isletim modeli, her baglam turune net bir ev verir.
+Bu repodaki işletim modeli, her bağlam türüne net bir ev verir.
 
 ## 2. Temel dosyalar
 
 ### `CLAUDE.md`
 
-`CLAUDE.md`, kalici davranis kurallari icindir.
+`CLAUDE.md`, kalıcı davranış kuralları içindir.
 
-Uygun icerikler:
+Uygun içerikler:
 
-- Proje calisma tarzi
+- Proje çalışma tarzı
 - Build, test ve lint beklentileri
-- Mimari sinirlar
-- Git workflow kurallari
-- Guvenlik kurallari
-- Dokumantasyon guncelleme kurallari
+- Mimari sınırlar
+- Git workflow kuralları
+- Güvenlik kuralları
+- Dokümantasyon güncelleme kuralları
 
-Kacinilmasi gerekenler:
+Kaçınılması gerekenler:
 
-- Gecici gorev notlari
-- Uzun issue dokumleri
-- Ham toplanti notlari
-- Surekli degisen implementasyon durumu
+- Geçici görev notları
+- Uzun issue dökümleri
+- Ham toplantı notları
+- Sürekli değişen implementasyon durumu
 
-Bu dosya sik okunacak kadar kisa kalmalidir.
+Bu dosya sık okunacak kadar kısa kalmalıdır.
 
 ### `PROJECT_CONTEXT.md`
 
-`PROJECT_CONTEXT.md`, kalici proje bilgisi icindir.
+`PROJECT_CONTEXT.md`, kalıcı proje bilgisi içindir.
 
-Uygun icerikler:
+Uygun içerikler:
 
-- Urun amaci
-- Hedef kullanicilar
+- Ürün amacı
+- Hedef kullanıcılar
 - Domain dili
-- Mimari ozet
-- Onemli kisitlar
+- Mimari özet
+- Önemli kısıtlar
 - Non-goals
-- Entegrasyon haritasi
+- Entegrasyon haritası
 
-Bu dosya yavas degismelidir.
+Bu dosya yavaş değişmelidir.
 
 ### `SESSION_CONTEXT.md`
 
-`SESSION_CONTEXT.md`, devam baglami icindir.
+`SESSION_CONTEXT.md`, devam bağlamı içindir.
 
-Uygun icerikler:
+Uygun içerikler:
 
-- Son tamamlanan is
+- Son tamamlanan iş
 - Mevcut branch
 - Son dokunulan dosyalar
-- Calistirilan komutlar
+- Çalıştırılan komutlar
 - Test ve lint durumu
 - Bilinen sorunlar
-- Siradaki onerilen adim
+- Sıradaki önerilen adım
 
-Bu dosya sik degisir ve oturum kapanirken tazelenmelidir.
+Bu dosya sık değişir ve oturum kapanırken tazelenmelidir.
 
 ## 3. Commands, hooks, rules, skills ve agents
 
-| Katman | Ne icin kullanilir? | Ornek |
+| Katman | Ne için kullanılır? | Örnek |
 | --- | --- | --- |
 | Custom command | Tekrarlanan manuel workflow | `/continue-session` |
-| Hook | Otomatik yasam dongusu veya guvenlik kontrolu | Riskli Bash komutlarini engelleme |
-| Rule | Teknolojiye veya klasore ozel kisit | Frontend accessibility kurallari |
-| Skill | Tekrar kullanilabilir yontem veya uzmanlik | RAG mimari incelemesi |
-| Subagent | Uzman inceleme veya implementasyon rolu | Security reviewer |
+| Hook | Otomatik yaşam döngüsü veya güvenlik kontrolü | Riskli Bash komutlarını engelleme |
+| Rule | Teknolojiye veya klasöre özel kısıt | Frontend accessibility kuralları |
+| Skill | Tekrar kullanılabilir yöntem veya uzmanlık | RAG mimari incelemesi |
+| Subagent | Uzman inceleme veya implementasyon rolü | Security reviewer |
 
 ## 4. Hooks
 
-Hooks, unutulmasi kolay kontrolleri otomatiklestirmelidir.
+Hooks, unutulması kolay kontrolleri otomatikleştirmelidir.
 
-Onerilen `SessionStart` kontrolleri:
+Önerilen `SessionStart` kontrolleri:
 
-- Mevcut branch'i goster.
-- Commit edilmemis degisiklikleri goster.
-- Proje ve oturum baglami dosyalarini oku.
-- Acik kararlari goster.
-- Paket yoneticisini ve mevcut komutlari tespit et.
+- Mevcut branch’i göster.
+- Commit edilmemiş değişiklikleri göster.
+- Proje ve oturum bağlamı dosyalarını oku.
+- Açık kararları göster.
+- Paket yöneticisini ve mevcut komutları tespit et.
 
-Onerilen `Stop` kontrolleri:
+Önerilen `Stop` kontrolleri:
 
-- Istenen isin tamamlanip tamamlanmadigini kontrol et.
-- Calistirilan test veya lint komutlarini kaydet.
-- Session context'i guncelle.
-- Implementation state'i guncelle.
-- Commit edilmemis degisiklikler icin uyar.
+- İstenen işin tamamlanıp tamamlanmadığını kontrol et.
+- Çalıştırılan test veya lint komutlarını kaydet.
+- Session context’i güncelle.
+- Implementation state’i güncelle.
+- Commit edilmemiş değişiklikler için uyar.
 
-Onerilen `PreToolUse` kontrolleri:
+Önerilen `PreToolUse` kontrolleri:
 
-- Yikici komutlari engelle veya onay iste.
-- `.env` ve credential dosyalarinin yanlislikla okunmasini engelle.
-- Production deploy, database reset veya migration komutlarinda onay iste.
+- Yıkıcı komutları engelle veya onay iste.
+- `.env` ve credential dosyalarının yanlışlıkla okunmasını engelle.
+- Production deploy, database reset veya migration komutlarında onay iste.
 
-Onerilen `PostToolUse` kontrolleri:
+Önerilen `PostToolUse` kontrolleri:
 
-- Kaynak kod degisikliklerinden sonra lint veya typecheck oner.
-- Public davranis degisikliklerinden sonra docs guncellemesi oner.
-- Feature islerinden sonra implementation state guncellemesi oner.
+- Kaynak kod değişikliklerinden sonra lint veya typecheck öner.
+- Public davranış değişikliklerinden sonra docs güncellemesi öner.
+- Feature işlerinden sonra implementation state güncellemesi öner.
 
 ## 5. MCP servers
 
-MCP server'lari repo dosyalari yeterli olmadiginda kullanin.
+MCP server’ları repo dosyaları yeterli olmadığında kullanın.
 
 Uygun adaylar:
 
 - GitHub issues ve pull requests
-- Linear veya Jira task'lari
-- Notion urun dokumanlari
-- Sentry hatalari
+- Linear veya Jira task’ları
+- Notion ürün dokümanları
+- Sentry hataları
 - Database inceleme
-- Figma tasarim dosyalari
+- Figma tasarım dosyaları
 
-Varsayilan yaklasim:
+Varsayılan yaklaşım:
 
-- Read-only erisimi tercih et.
-- Write access'i yalnizca workflow gercekten gerektiriyorsa ekle.
-- Secret veya private customer data aciga cikarma.
-- Degisiklik yapmadan once hangi dis baglamin kullanildigini ozetle.
+- Read-only erişimi tercih et.
+- Write access’i yalnızca workflow gerçekten gerektiriyorsa ekle.
+- Secret veya private customer data açığa çıkarma.
+- Değişiklik yapmadan önce hangi dış bağlamın kullanıldığını özetle.
 
 ## 6. Plugins
 
-Plugin yazarak baslamayin.
+Plugin yazarak başlamayın.
 
-Once repo seviyesinde su dosya ve klasorleri oturtun:
+Önce repo seviyesinde şu dosya ve klasörleri oturtun:
 
 - `CLAUDE.md`
 - `PROJECT_CONTEXT.md`
@@ -147,29 +147,29 @@ Once repo seviyesinde su dosya ve klasorleri oturtun:
 - `.claude/agents`
 - `.claude/skills`
 
-Ayni yapi birkac repoda faydasini kanitladiginda plugin olarak paketleyin.
+Aynı yapı birkaç repoda faydasını kanıtladığında plugin olarak paketleyin.
 
-## 7. Pratik kurulum sirasi
+## 7. Pratik kurulum sırası
 
-Yeni bir proje icin su sirayi kullanin:
+Yeni bir proje için şu sırayı kullanın:
 
-1. Claude Code'dan application code'a dokunmadan repoyu incelemesini isteyin.
-2. Temel context dosyalarini olusturun.
-3. Yalnizca gercekten kullanacaginiz command'lari ekleyin.
-4. Productivity hook'larindan once safety hook'larini ekleyin.
-5. Gercek proje konvansiyonlari icin rules ekleyin.
-6. Review workflow'lari icin agents ekleyin.
-7. Tekrar kullanilabilir uzmanliklar icin skills ekleyin.
-8. Dis baglam icin MCP server'lari ekleyin.
-9. Tekrarlanan kurulumlari plugin'e donusturun.
+1. Claude Code’dan application code’a dokunmadan repoyu incelemesini isteyin.
+2. Temel context dosyalarını oluşturun.
+3. Yalnızca gerçekten kullanacağınız command’ları ekleyin.
+4. Productivity hook’larından önce safety hook’larını ekleyin.
+5. Gerçek proje konvansiyonları için rules ekleyin.
+6. Review workflow’ları için agents ekleyin.
+7. Tekrar kullanılabilir uzmanlıklar için skills ekleyin.
+8. Dış bağlam için MCP server’ları ekleyin.
+9. Tekrarlanan kurulumları plugin’e dönüştürün.
 
-## 8. Bakim dongusu
+## 8. Bakım döngüsü
 
-Anlamli oturumlarin sonunda:
+Anlamlı oturumların sonunda:
 
-1. `SESSION_CONTEXT.md` guncelle.
-2. `docs/IMPLEMENTATION_STATE.md` guncelle.
-3. Kararlar degistiyse `docs/OPEN_DECISIONS.md` guncelle.
-4. Kullaniciya gorunen davranis degistiyse user-facing docs guncelle.
-5. Hangi kontrollerin calistirildigini kaydet.
-6. Kucuk ve incelenebilir commit'ler olustur.
+1. `SESSION_CONTEXT.md` güncelle.
+2. `docs/IMPLEMENTATION_STATE.md` güncelle.
+3. Kararlar değiştiyse `docs/OPEN_DECISIONS.md` güncelle.
+4. Kullanıcıya görünen davranış değiştiyse user-facing docs güncelle.
+5. Hangi kontrollerin çalıştırıldığını kaydet.
+6. Küçük ve incelenebilir commit’ler oluştur.
