@@ -111,7 +111,7 @@ Uzmanlık yöntemi → Skill
 Uzman rol → Subagent
 Dış sistem erişimi → MCP Server
 Yeniden kullanılabilir paket → Plugin
-Plugins = Bunların paylaşılabilir paket hali
+Plugins → Bunların paylaşılabilir paket hali
 ```
 
 ---
