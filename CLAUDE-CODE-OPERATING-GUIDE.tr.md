@@ -114,8 +114,6 @@ Yeniden kullanılabilir paket → Plugin
 Plugins → Bunların paylaşılabilir paket hali
 ```
 
----
-
 ```text
 Bir şeyi nereye koymalıyım?
 
