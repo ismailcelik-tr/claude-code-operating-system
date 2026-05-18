@@ -1,4 +1,4 @@
-**Notice:** This guide should be reviewed periodically because Claude Code features such as Hooks, Plugins, Skills, MCP Servers, and Subagents may change over time.
+**Uyarı:** Hooks, Eklentiler, Beceriler, MCP Sunucuları ve Alt Ajanlar gibi Claude Code özellikleri zamanla değişebileceğinden, bu kılavuzun düzenli aralıklarla gözden geçirilmesi önerilir.
 
 ## **Claude Code/CLI Çalışma Mimarisi Rehberi**
 
